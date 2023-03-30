@@ -8,3 +8,34 @@ typedef struct LNode{//定义单链表结点类型
     ElemType data; //数据域
     struct LNode *next;//指针域
 }LNode, *LinkList;
+
+
+
+//判空（不带头节点）
+bool Empty(LinkList  L){
+  if(L==NULL)
+    return true;
+  else
+    return false;
+}
+//或者
+bool Empty(LinkList  L){
+  return（L==NULL）;
+}
+
+
+//
+bool InitList(LinkList& L) {       //注意用引用，因为下面malloc在赋值
+ L=(LNode*)malloc(sizeof(LNode))   //分配头结点
+    if(L==NUll)                    //分配失败
+		return false;
+	L->next=NULL;                  //初始化
+	return true;
+}
+判空
+bool Empty(LinkList  L){
+ if（L->next==NULL）    
+   return true;
+  else
+    return false;
+}
